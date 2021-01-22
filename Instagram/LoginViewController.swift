@@ -11,7 +11,7 @@ import Firebase
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var mailAddressTextField: UITextField!
+    @IBOutlet weak var mailAdressTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var displayNameTextField: UITextField!
     
@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func handleCreateAccountButton(_ sender: Any) {
-        if let address = mailAddressTextField.text,let password = passwordTextField.text, let displayName = displayNameTextField.text {
+        if let address = mailAdressTextField.text,let password = passwordTextField.text, let displayName = displayNameTextField.text {
 
             // アドレスとパスワードと表示名のいずれかでも入力されていない時は何もしない
             if address.isEmpty || password.isEmpty || displayName.isEmpty {
