@@ -5,7 +5,7 @@
 //  Created by Ryutaro Okita on 2021/01/20.
 //  Copyright © 2021 ryutarou.okita. All rights reserved.
 //
-
+import Firebase
 import UIKit
 
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
@@ -19,6 +19,20 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         self.tabBar.barTintColor = UIColor(red: 0.96,green: 0.91,blue: 0.87,alpha: 1)
         self.delegate = self
     }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if Auth.auth().currentUser == nil{
+            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+            self.present(loginViewController!, animated: true, completion: nil)
+        }
+    }
+    
+    
+    
+    
 
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
     if viewController is ImageSelectViewController {
