@@ -9,8 +9,7 @@
 import UIKit
 import Firebase
 
-
-class PostDate:NSObject {
+class PostData: NSObject {
     var id: String
     var name: String?
     var caption: String?
